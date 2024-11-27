@@ -4,7 +4,7 @@ require 'json'
 require 'dotenv/load'
 
 class User < ApplicationRecord
-  before_save :fetch_github_commits
+  # before_save :fetch_github_commits
   has_many :training_plans
   has_many :user_skills
   has_many :skills, through: :user_skills
@@ -13,8 +13,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
-  private
 
   def fetch_github_commits
     @commit_status = {}
