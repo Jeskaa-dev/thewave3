@@ -48,13 +48,9 @@ gem "sassc-rails"
 gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary"
 gem "pundit"
-<<<<<<< HEAD
+
 gem "omniauth", "~> 2.1", ">= 2.1.2"
 gem "omniauth-github", "~> 2.0", ">= 2.0.1"
-=======
-gem "omniauth", "~> 1.6", ">= 1.6.1"
->>>>>>> 75d6cdbac9ee3cbae9bd742b10395ae56b6ab45d
-
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
