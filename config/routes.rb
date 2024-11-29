@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :training_plans do
-    resources :resources, only: %i[index]
-    resources :skills, only: %i[index]
+    resources :resources, only: %i[show]
+
   end
 end
