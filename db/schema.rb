@@ -24,6 +24,23 @@ ActiveRecord::Schema[7.1].define(version: 2024_12_05_101344) do
     t.index ["training_plan_id"], name: "index_completions_on_training_plan_id"
   end
 
+  create_table "portfolios", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "step_1_github_url"
+    t.string "step_1_site_url"
+    t.string "step_2_github_url"
+    t.string "step_2_site_url"
+    t.string "step_3_github_url"
+    t.string "step_3_site_url"
+    t.string "step_4_github_url"
+    t.string "step_4_site_url"
+    t.string "step_5_github_url"
+    t.string "step_5_site_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_portfolios_on_user_id"
+  end
+
   create_table "questions", force: :cascade do |t|
     t.text "user_question"
     t.text "ai_answer"
@@ -240,6 +257,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_12_05_101344) do
 
   add_foreign_key "completions", "resources"
   add_foreign_key "completions", "training_plans"
+  add_foreign_key "portfolios", "users"
   add_foreign_key "questions", "users"
   add_foreign_key "resources", "skills"
   add_foreign_key "solid_queue_blocked_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
